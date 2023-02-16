@@ -1,28 +1,10 @@
-pipeline{
-    agent any
-    stages{
-        stage('Build'){
-            steps{
-                sh 'g++ -c PES1UG20CS558.cpp'
-                sh 'g++ -o PES1UG20CS558 PES1UG20CS558.cpp'
-                echo 'build stage successfull'
-            }
-        }
-        stage('Test'){
-            steps{
-                sh './PES1UG20CS558'
-                echo 'Test stage executed successfully'
-            }
-        }
-        stage('Deploy'){
-            steps{
-                echo 'Deployed successfully'
-            }
-        }
-    }
-    post{
-        failure{
-            echo 'Pipeline Failed'
-        }
-    }
+//File: 	SRN.cpp
+#include <iostream>
+using namespace std;
+
+int main(void) {
+  cout << "Hello, World\n";
+  cout << "Hello, Jenkins\n";
+  cout << "I, PES1UG20CS558, have successfully built and run \n";
+  return 0;
 }
